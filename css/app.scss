@@ -1,0 +1,11 @@
+.navigation{
+  position: relative;
+  .nav-content{
+    padding-right: 70px;
+    .btn-principal{
+      position:absolute;
+      bottom: -25px;
+      right:0;
+    }
+  }
+}
