@@ -9,4 +9,8 @@ angular.module('rac',['rac.controllers','ngRoute'])
               controller: "ProfileController",
               templateUrl:"templates/profile.html"
             })
+            .when("/productos",{
+              controller: "ProductController",
+              templateUrl:"templates/productos.html"
+            })
   })
