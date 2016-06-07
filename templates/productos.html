@@ -1,21 +1,36 @@
-<section>
+<section class="products">
+  <h4>Productos</h4>
+  <p>Selecciona el producto que desees solicitar.</p>
   <div class="row">
-    <div class="col s12 m3">
+    <div class="col s12 m3" ng-repeat="item in items">
       <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="img/plancha.jpg">
+          <img class="activator" ng-src="{{item.foto}}">
         </div>
         <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">Plancha modelo 3x<i class="material-icons right">more_vert</i></span>
+          <span class="card-title activator grey-text text-darken-4">{{item.nombre}}<i class="material-icons right">more_vert</i></span>
           <p><a href="#">Solicitar</a></p>
         </div>
         <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Plancha modelo 3x<i class="material-icons right">close</i></span>
-          <p>Una plancha increíble. La reina de las planchas.</p>
-          <p>Precio: $30.00</p>
-          <p>Sucrusal: Las Cascadas</p>
+          <span class="card-title grey-text text-darken-4">{{item.nombre}}<i class="material-icons right">close</i></span>
+          <p>{{item.descripcion}}</p>
+          <p>Precio: {{item.precio | currency}}</p>
+          <p>Sucrusal: {{item.sucursal}}</p>
         </div>
       </div>
     </div>
+  </div>
+  <div class="pager">
+    <ul class="pagination">
+      <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+      <li class="active"><a href="#!">1</a></li>
+      <li class="waves-effect"><a href="#!">2</a></li>
+      <li class="waves-effect"><a href="#!">3</a></li>
+      <li class="waves-effect"><a href="#!">4</a></li>
+      <li class="waves-effect"><a href="#!">5</a></li>
+      <li class="waves-effect"><a href="#!">6</a></li>
+      <li class="waves-effect"><a href="#!">7</a></li>
+      <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+    </ul>
   </div>
 </section>
