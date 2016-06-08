@@ -1,11 +1,19 @@
 angular.module('rac.controllers',[])
 
   .controller('MainController',function($scope){
-    
-  })
 
+  })
+  .controller('ProfileController',function($scope){
+
+  })
   .controller('SolicitudesController',function($scope){
-    $scope.var = "ruta1";
+    $scope.solicitudes = [
+      {
+        foto: "",
+        nombre: "",
+        iniciado: "",
+      },
+    ];
   })
 
   .controller('ProductController',function($scope){
