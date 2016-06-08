@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<!--Meta tags-->
+
+	<meta charset="UTF-8"/
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+
+	<title>CPanel</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <title>RAC System</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.3/angular-route.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+  <script src="js/pad.js"></script>
+  <script src="js/padcontrollers.js"></script>
+
+</head>
+<body ng-app="pad">
+  <ul id="dropdown1" class="dropdown-content">
+	  <li><a href="#/profile">Perfil</a></li>
+	  <li><a href='procesos/logouta.php'>Cerrar Sesión</a></li>
+	</ul>
+	<nav>
+	  <div class="nav-wrapper red darken-4">
+	    <a href="#/" class="brand-logo">CPanel</a>
+	    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+	    <ul class="right hide-on-med-and-down">
+	      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">@admin<i class="material-icons right">arrow_drop_down</i></a></li>
+	    </ul>
+	     <ul class="side-nav" id="mobile-demo">
+	     <li><a href="#/">Inicio</a></li>
+        <li><a href="#/profile">Perfil</a></li>
+        <li><a href='procesos/logouta.php'>Cerrar Sesión</a></li>
+      </ul>
+	  </div>
+	</nav>
+	<div ng-view></div>
+	<footer class="page-footer red darken-4">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">RAC System</h5>
+          <h6 class="subtitle">powered by Cuzka</h6>
+          <p class="grey-text text-lighten-4">Realiza de manera efectiva tus solicitudes de crédito en cualquier lugar.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Youtube</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2016 Todos los derechos reservados
+      <a class="grey-text text-lighten-4 right" href="#!">UNICOMER</a>
+      </div>
+    </div>
+        </footer>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<section class="nueva-solicitud">
+  <h4>Nueva Solicitud</h4>
+  <div class="container">
+    <div class="solicitud">
+      <div class="row">
+        <div class="col s12 m3">
+          <figure>
+            <img src="img/camara.png" alt="Foto" width="200px" height="200px"/>
+          </figure>
+        </div>
+        <div class="col s12 m9">
+          <div class="row">
+            <div class="col s12">
+              <select class="browser-default">
+               <option value="" disabled selected>Producto</option>
+               <option value="1" selected>Cámara Nikon 1080p</option>
+               <option value="2">Televisor LCD</option>
+               <option value="3">Plancha modelo 3x</option>
+               <option value="4">Audífonos SONY</option>
+             </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <input placeholder="Cantidad" id="cantidad" type="number" class="validate" value="1">
+              <label class="active" for="cantidad">Cantidad</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input placeholder="Cantidad" id="financiamiento" type="number" class="validate" value="50" disabled>
+              <label class="active" for="financiamiento">Costo</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <input placeholder="Cantidad" id="prima" type="number" class="validate" value="40">
+              <label class="active" for="prima">Prima</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input placeholder="Cantidad" id="plazos" type="number" class="validate" value="24">
+              <label class="active" for="plazos">Plazos(meses)</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12 m6">
+          <input placeholder="Cantidad" id="garante" type="text" class="validate" value="Jelmy Josúe Hernandez Melgar">
+          <label class="active" for="garante">Garante</label>
+        </div>
+        <div class="col s6 m3">
+          <p>Total crédito: $40.00</p>
+          <p>Total: $100.00</p>
+        </div>
+        <div class="col s6 m3">
+          <p>Descuento: $0.00</p>
+          <p>Neto a financiar: $50.00</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m6">
+          <input type="checkbox" class="filled-in" id="filled-in-box" />
+          <label for="filled-in-box">Acepto <a href="#">términos y condiciones</a> de la empresa</label>
+        </div>
+        <div class="col s12 m6">
+          <a class="waves-effect waves-light btn"><i class="material-icons left">done</i>Confirmar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

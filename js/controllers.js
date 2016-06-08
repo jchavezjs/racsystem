@@ -6,12 +6,28 @@ angular.module('rac.controllers',[])
   .controller('ProfileController',function($scope){
 
   })
+  .controller('NuevaController',function($scope){
+
+  })
   .controller('SolicitudesController',function($scope){
     $scope.solicitudes = [
       {
-        foto: "",
-        nombre: "",
-        iniciado: "",
+        foto: "img/camara.png",
+        nombre: "Cámara Nikon 1080p",
+        iniciado: "2016-07-01",
+        estado: "Díctado",
+        fechaestado: "2016-07-07",
+        comentarios: "Todo se encuentra correcto.",
+        porcentaje: "80%"
+      },
+      {
+        foto: "img/tv.png",
+        nombre: "Televisor LCD",
+        iniciado: "2016-06-01",
+        estado: "Revisión teléfonica",
+        fechaestado: "2016-07-01",
+        comentarios: "Procesando información",
+        porcentaje: "20%"
       },
     ];
   })

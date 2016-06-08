@@ -1,0 +1,47 @@
+<div class="container pad">
+      <table class="centered striped">
+        <thead>
+          <tr>
+              <th data-field="id">Identificación</th>
+              <th data-field="name">Tipo de cliente</th>
+              <th data-field="price">Proceso ejecutado</th>
+              <th data-field="price">Tiempo transcurrido</th>
+              <th data-field="price">Finalización</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>
+              <div class="input-field">
+                <input placeholder="identificación" type="text" class="validate" value="508932">
+              </div>
+            </td>
+            <td>
+              <p>
+                <input name="group1" type="radio" id="test1" class="with-gap" checked/>
+                <label for="test1">Nuevo</label>
+              </p>
+              <p>
+                <input name="group1" type="radio" id="test2" class="with-gap" />
+                <label for="test2">Establecido</label>
+              </p>
+            </td>
+            <td>
+              <select class="browser-default">
+               <option value="" disabled selected>Proceso</option>
+               <option value="1" selected>Buró</option>
+               <option value="2">Rev. Teléfonica</option>
+               <option value="3">Díctado</option>
+               <option value="4">Analisís</option>
+             </select>
+            </td>
+            <td>
+              <p>00:00:00</p>
+              <p><a class="waves-effect waves-light btn center">Comenzar</a></p>
+            </td>
+            <td><a class="waves-effect waves-light btn center">Finalizar</a></td>
+          </tr>
+        </tbody>
+      </table>
+</div>

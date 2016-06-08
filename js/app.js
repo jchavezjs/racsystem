@@ -17,4 +17,11 @@ angular.module('rac',['rac.controllers','ngRoute'])
               controller: "SolicitudesController",
               templateUrl:"templates/solicitudes.html"
             })
+            .when("/nueva-solicitud",{
+              controller: "NuevaController",
+              templateUrl:"templates/nueva-solicitud.html"
+            })
+            .otherwise({
+               redirectTo: "/"
+           });
   })

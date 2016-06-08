@@ -1,4 +1,25 @@
 <section class="solicitudes">
   <h4>Solicitudes</h4>
-  <p>Estado actual de las solicitudes realizadas</p>
+  <div class="container">
+      <div class="item-solicitud" ng-repeat="solicitud in solicitudes">
+      <div class="row">
+        <div class="col s12 m3">
+          <figure>
+            <img ng-src="{{solicitud.foto}}" alt="foto" width="150px" height="150px">
+          </figure>
+        </div>
+        <div class="col s12 m9">
+          <div class="progress">
+              <div class="determinate" style="width: {{solicitud.porcentaje}}"></div>
+          </div>
+          <h6>Solicitud de crédito de {{solicitud.nombre}}</h6>
+          <p>Fecha de inicio: {{solicitud.iniciado | date:"dd/MM/yyyy"}}</p>
+          <p>Estado actual: {{solicitud.estado}}</p>
+          <p>Estado actual desde: {{solicitud.fechaestado | date:"dd/MM/yyyy"}}</p>
+          <p>Comentarios: {{solicitud.comentarios}}</p>
+        </div>
+      </div>
+      <a class="waves-effect waves-light btn help-btn">Obtener ayuda</a>
+    </div>
+  </div>
 </section>
