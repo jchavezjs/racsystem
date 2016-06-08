@@ -10,27 +10,41 @@
       <form class="col s12">
       <div class="row">
         <div class="input-field col s12 m6">
-          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-          <label for="first_name">First Name</label>
+          <input placeholder="Placeholder" id="first_name" type="text" class="validate" value="Joé Luis">
+          <label class="active" for="first_name">Nombres</label>
         </div>
         <div class="input-field col s12 m6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Last Name</label>
+          <input id="last_name" type="text" class="validate" value="Herrera Torres">
+          <label class="active" for="last_name">Apellidos</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
-          <label for="password">Password</label>
+        <div class="input-field col s12 m6">
+          <input id="email" type="email" class="validate" value="joseluis@gmail.com">
+          <label class="active" for="email">Email</label>
+        </div>
+        <div class="input-field col s12 m6 radios">
+          <input name="group1" type="radio" id="test1" class="with-gap" checked/>
+          <label for="test1">Masculino</label>
+          <input name="group1" type="radio" id="test2" class="with-gap" />
+          <label for="test2">Femenino</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
+        <div class="input-field col s12 m6">
+          <input id="password" type="password" class="validate" value="12345">
+          <label class="active" for="password">Contraseña</label>
+        </div>
+        <div class="input-field col s12 m6">
+          <input id="password" type="password" class="validate" value="12345">
+          <label class="active" for="password">Confirmar contraseña</label>
         </div>
       </div>
     </form>
+
+<a class="waves-effect waves-light btn"><i class="material-icons left">done</i>Guardar</a>
+
     </div>
   </div>
 </section>
+<script src="js/slider.js"></script>
