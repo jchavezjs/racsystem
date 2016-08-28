@@ -3,6 +3,21 @@ angular.module('rac.controllers',[])
   .controller('MainController',function($scope){
 
   })
+  .controller('HeaderController',function($scope,$http){
+    $scope.session = false;
+    $http.get('php/userdata.php').success(function(response){
+      if(response.username != null){
+        $scope.session = true;
+      }
+    });
+    $scope.login = function(user,pass){
+      $http.post('php/login.php',{'user':user, 'pass':pass}).success(function(response){
+        if(response.status){
+          $scope.session = true;
+        }
+      });
+    };
+  })
   .controller('ProfileController',function($scope){
 
   })

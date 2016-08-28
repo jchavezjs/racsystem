@@ -1,4 +1,4 @@
-angular.module('rac',['rac.controllers','ngRoute'])
+angular.module('rac',['rac.controllers','ngRoute','ui.materialize'])
   .config(function($routeProvider,$locationProvider){
     $routeProvider
             .when("/", {
@@ -21,7 +21,16 @@ angular.module('rac',['rac.controllers','ngRoute'])
               controller: "NuevaController",
               templateUrl:"templates/nueva-solicitud.html"
             })
+            .when("/login",{
+              controller: "LoginController",
+              templateUrl:"templates/login.html"
+            })
             .otherwise({
                redirectTo: "/"
            });
+  })
+
+  .component('mainHeader',{
+    templateUrl: "templates/header.html",
+    controller: "HeaderController"
   })

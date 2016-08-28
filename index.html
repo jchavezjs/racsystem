@@ -7,32 +7,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
   <link rel="stylesheet" href="css/app.css">
   <title>RAC System</title>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.3/angular-route.js"></script>
-  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.1/angular-materialize.min.js"></script>
   <script src="js/app.js"></script>
   <script src="js/controllers.js"></script>
 </head>
 <body ng-app="rac">
-  <nav class="navigation">
-    <div class="nav-wrapper indigo darken-4 nav-content">
-      <a href="#/" class="brand-logo">RAC</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#/perfil">Perfil</a></li>
-        <li><a href="#/productos">Productos</a></li>
-        <li><a href="#/solicitudes">Solicitudes</a></li>
-        <a class="btn-floating btn-large waves-effect waves-light light-green accent-4 btn-principal" href="#/nueva-solicitud"><i class="material-icons">note_add</i></a>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="#/nueva-solicitud">Nueva solicitud</a></li>
-        <li><a href="#/productos">Productos</a></li>
-        <li><a href="#/perfil">Perfil</a></li>
-        <li><a href="#/solicitudes">Solicitudes</a></li>
-      </ul>
-    </div>
-  </nav>
   <div ng-view></div>
   <footer class="page-footer indigo darken-4 footer">
           <div class="container">
@@ -60,6 +43,6 @@
             </div>
           </div>
         </footer>
-      <script src="js/slider.js"></script>
+
 </body>
 </html>
