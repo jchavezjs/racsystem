@@ -3,18 +3,28 @@ angular.module('rac.controllers',[])
   .controller('MainController',function($scope){
 
   })
-  .controller('HeaderController',function($scope,$http){
+  .controller('HeaderController',function($scope,$http,$location){
     $scope.session = false;
     $http.get('php/userdata.php').success(function(response){
       if(response.username != null){
         $scope.session = true;
+      }else{
+        $location.path('/');
       }
     });
     $scope.login = function(user,pass){
+      console.log(user);
+      console.log(pass);
       $http.post('php/login.php',{'user':user, 'pass':pass}).success(function(response){
         if(response.status){
           $scope.session = true;
         }
+      });
+    };
+    $scope.close = function(){
+      $http.get('php/logout.php').success(function(){
+        $location.path('/');
+        $scope.session = false;
       });
     };
   })

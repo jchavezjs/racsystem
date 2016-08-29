@@ -1,11 +1,15 @@
 <?php
 include('connection.php');
-if(isset($data_input -> username) && isset($data_input -> password)){
+if(isset($data_input -> user) && isset($data_input -> pass)){
 
-  $username = $data_input -> username;
-  $password = md5($data_input -> password);
+  $username = $data_input -> user;
+  $password = $data_input -> pass;
 
-  $q1 = $mysqli->query("SELECT login('$username','$password') AS login");
+  $q1 = $mysqli->query("SELECT c.id_cliente AS login
+                        FROM cliente c INNER JOIN users u
+                        ON u.id_user = c.id_user
+                        AND u.user_alias = '$username'
+                        AND u.pass_user = '$password'");
   $row = $q1->fetch_assoc();
 
   $response = $row["login"];
@@ -28,5 +32,11 @@ if(isset($data_input -> username) && isset($data_input -> password)){
   }
 
   $mysqli->close();
+}else{
+  echo json_encode(
+    array(
+      'status' => "No se puede conectar"
+    )
+  );
 }
 ?>
