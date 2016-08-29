@@ -28,8 +28,29 @@ angular.module('rac.controllers',[])
       });
     };
   })
-  .controller('ProfileController',function($scope){
+  .controller('ProfileController',function($scope, $http){
+    $http.get('php/profile.php').success(function(response){
+      $scope.nombres = response.nombres;
+      $scope.apellidos = response.apellidos;
+      $scope.fecha = response.fecha;
+      $scope.ingreso = response.ingreso;
+      $scope.email = response.email;
+      $scope.trabajo = response.trabajo;
+      if(response.sexo == 1){
+        $scope.sexo = 1;
+      }else{
+        $scope.sexo = 0;
+      }
+      $scope.civil = response.civil;
+      $scope.cargo = response.cargo;
+      $scope.telefono = response.telefono;
+      $scope.estudios = response.estudios;
+      $scope.nacionalidad = response.nacionalidad;
+      $scope.calificacion = response.calificacion;
+      $scope.conyugue = response.nombre_co + " " + response.apellido_co;
 
+      $scope.foto = response.foto;
+    });
   })
   .controller('NuevaController',function($scope){
 

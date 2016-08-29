@@ -4,41 +4,41 @@
   <div class="row">
     <div class="col s12 m3">
       <figure>
-        <img src="img/perfil.jpg" alt="Foto de perfil" width="300px" height="300px">
+        <img ng-src="{{foto}}" alt="Foto de perfil" width="300px" height="300px">
       </figure>
     </div>
     <div class="col s12 m9">
       <form class="col s12">
       <div class="row">
         <div class="input-field col s12 m6">
-          <input placeholder="Placeholder" id="first_name" type="text" class="validate" value="Joé Luis">
+          <input placeholder="Placeholder" id="first_name" type="text" class="validate" ng-model="nombres">
           <label class="active" for="first_name">Nombres</label>
         </div>
         <div class="input-field col s12 m6">
-          <input id="last_name" type="text" class="validate" value="Herrera Torres">
+          <input id="last_name" type="text" class="validate" ng-model="apellidos">
           <label class="active" for="last_name">Apellidos</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12 m6">
-          <input id="email" type="email" class="validate" value="joseluis@gmail.com">
+          <input id="email" type="email" class="validate" ng-model="email">
           <label class="active" for="email">Email</label>
         </div>
         <div class="input-field col s12 m6 radios">
-          <input name="group1" type="radio" id="test1" class="with-gap" checked/>
+          <input name="group1" type="radio" id="test1" ng-model="sexo" value="1"/>
           <label for="test1">Masculino</label>
-          <input name="group1" type="radio" id="test2" class="with-gap" />
+          <input name="group1" type="radio" id="test2" ng-model="sexo" value="0"/>
           <label for="test2">Femenino</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12 m6">
-          <input id="password" type="password" class="validate" value="12345">
-          <label class="active" for="password">Contraseña</label>
+          <input id="password" type="text" class="validate" ng-model="fecha">
+          <label class="active" for="password">Fecha de nacimiento</label>
         </div>
         <div class="input-field col s12 m6">
-          <input id="password" type="password" class="validate" value="12345">
-          <label class="active" for="password">Confirmar contraseña</label>
+          <input id="password" type="text" class="validate" ng-model="trabajo">
+          <label class="active" for="password">Lugar de trabajo</label>
         </div>
       </div>
     </form>
@@ -58,114 +58,40 @@
              </select>
             </div>
             <div class="input-field col s12 m9">
-              <input placeholder="Placeholder" id="profesion" type="text" class="validate" value="Estudiante">
-              <label class="active" for="profesion">Actividad/Profesión</label>
+              <input placeholder="Placeholder" id="profesion" type="text" class="validate" ng-model="cargo">
+              <label class="active" for="profesion">Cargo</label>
             </div>
           </div>
         </div>
         <div class="col s12 m6">
           <div class="row">
-            <div class="col s12 m3">
-              <select class="browser-default">
-                <option value="" disabled selected>Tipo de documento</option>
-                <option value="1" selected>DUI</option>
-                <option value="2">NIT</option>
-                <option value="3">LICENCIA</option>
-                <option value="4">CARNÉ DE RESIDENCIA</option>
-              </select>
-            </div>
-            <div class="input-field col s12 m9">
-              <input placeholder="Placeholder" id="document" type="text" class="validate" value="03928392-5">
-              <label class="active" for="document">Número de documento</label>
+            <div class="input-field col s12">
+              <input placeholder="Placeholder" id="document" type="text" class="validate" ng-model="telefono">
+              <label class="active" for="document">Teléfono</label>
             </div>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12 m6">
-          <input placeholder="Placeholder" id="tel" type="text" class="validate" value="(+503) 78643921">
-          <label class="active" for="tel">Teléfono</label>
+          <input placeholder="Placeholder" id="tel" type="text" class="validate" ng-model="estudios">
+          <label class="active" for="tel">Grado académico</label>
         </div>
         <div class="input-field col s12 m6">
-          <input placeholder="Placeholder" id="direccion" type="text" class="validate" value="Av. Revolución Industrial No 564 Interior 8.
-Col. Residencial del Potosí CP. 65478 Saltillo Coahuila, México.">
-          <label class="active" for="direccion">Dirección</label>
+          <input placeholder="Placeholder" id="direccion" type="text" class="validate" ng-model="nacionalidad">
+          <label class="active" for="direccion">Nacionalidad</label>
         </div>
       </div>
           <div class="row">
-            <div class="input-field col s12 m6">
-              <input placeholder="Placeholder" id="lugarprofesion" type="text" class="validate" value="Pizza Hut">
-              <label class="active" for="lugarprofesion">Lugar de trabajo</label>
+            <div class="input-field col s12 ">
+              <input placeholder="Placeholder" id="lugarprofesion" type="text" class="validate" ng-model="calificacion">
+              <label class="active" for="lugarprofesion">Calificación</label>
             </div>
-            <div class="col s12 m6">
-              <div class="row">
-                <div class="input-field col s12 m4">
-                  <input placeholder="Placeholder" id="cargo" type="text" class="validate" value="Soporte Técnico">
-                  <label class="active" for="cargo">Cargo</label>
-                </div>
-                <div class="col s12 m8">
-
-                <form action="#">
-                  <label for="" class="validate">Tiempo de trabajo</label>
-                  <p class="range-field">
-                    <input type="range" id="test5" min="0" max="100" />
-                  </p>
-                </form>
-
-                </div>
-              </div>
-        </div>
       </div>
       <div class="row">
-        <div class="col s12 m6">
-          <div class="row">
-            <div class="col s12 m3">
-              <select class="browser-default">
-                <option value="" disabled selected>Tipo de ingresos</option>
-                <option value="1" selected>SALARIO</option>
-                <option value="2">REMESAS</option>
-                <option value="3">NEGOCIO INFORMAL</option>
-                <option value="4">NEGOCIO FORMAL</option>
-              </select>
-            </div>
-            <div class="input-field col s12 m9">
-              <input placeholder="Ingresos" id="ingresos" type="number" class="validate" value="500">
-              <label class="active" for="ingresos">Total de ingresos</label>
-            </div>
-          </div>
-        </div>
         <div class="input-field col s12 m6">
-          <input placeholder="Ingresos" id="ingresos2" type="number" class="validate" value="500">
-          <label class="active" for="ingresos2">Ingresos mensuales</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s12 m6">
-          <div class="row">
-            <div class="col s12 m3">
-              <select class="browser-default">
-                <option value="" disabled>Relación</option>
-                <option value="1" selected>PADRE</option>
-                <option value="2">MADRE</option>
-                <option value="3">PRIMOS</option>
-                <option value="4">OTROS</option>
-              </select>
-            </div>
-            <div class="input-field col s12 m9">
-              <input placeholder="Ingresos" id="familair" type="text" class="validate" value="José Luis Padre">
-              <label class="active" for="familair">Nombre de familiar</label>
-            </div>
-          </div>
-        </div>
-        <div class="input-field col s12 m6">
-          <input placeholder="Ingresos" id="telfam" type="text" class="validate" value="(+503) 73625271">
-          <label class="active" for="telfam">Teléfono de familiar</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input placeholder="Ingresos" id="ireferencias" type="text" class="validate" value="Juan Carlos Gárcia Jovel (+503) 73625271">
-          <label class="active" for="referencias">Referencias comerciales</label>
+          <input placeholder="Ingresos" id="ireferencias" type="text" class="validate" ng-model="conyugue">
+          <label class="active" for="referencias">Cónyugue</label>
         </div>
       </div>
       <a class="waves-effect waves-light btn"><i class="material-icons left">done</i>Guardar</a>

@@ -17,7 +17,7 @@ if(isset($data_input -> user) && isset($data_input -> pass)){
   if($response){
     session_start();
     /*session is started if you don't write this line can't use $_Session  global variable*/
-    $_SESSION["id"] = $username;
+    $_SESSION["id"] = $response;
     echo json_encode(
       array(
         'status' => 1
