@@ -13,8 +13,6 @@ angular.module('rac.controllers',[])
       }
     });
     $scope.login = function(user,pass){
-      console.log(user);
-      console.log(pass);
       $http.post('php/login.php',{'user':user, 'pass':pass}).success(function(response){
         if(response.status){
           $scope.session = true;
