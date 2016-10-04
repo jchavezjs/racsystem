@@ -1,5 +1,5 @@
 angular.module('rac.controllers',[])
-
+  // AQUI ESTAN LOS CONTROLADORES
   .controller('MainController',function($scope){
 
   })
@@ -13,10 +13,8 @@ angular.module('rac.controllers',[])
       }
     });
     $scope.login = function(user,pass){
-      console.log(user);
-      console.log(pass);
       $http.post('php/login.php',{'user':user, 'pass':pass}).success(function(response){
-        if(response.status){
+        if(response.status == 1){
           $scope.session = true;
         }
       });
