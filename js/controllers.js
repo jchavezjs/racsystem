@@ -49,6 +49,16 @@ angular.module('rac.controllers',[])
 
       $scope.foto = response.foto;
     });
+    var currentTime = new Date();
+$scope.currentTime = currentTime;
+$scope.month = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+$scope.monthShort = ['En', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+$scope.weekdaysFull = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sábado'];
+$scope.weekdaysLetter = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+$scope.disable = [false, 1, 7];
+$scope.today = 'Hoy';
+$scope.clear = 'Limpiar';
+$scope.close = 'Cerrar';
   })
   .controller('NuevaController',function($scope, $routeParams, $http, $location){
     var id = $routeParams.id;

@@ -32,23 +32,77 @@
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s12 m6">
-          <input id="password" type="text" class="validate" ng-model="fecha">
-          <label class="active" for="password">Fecha de nacimiento</label>
+        <div class=" col s12 m5">
+          <label for="inputCreated">Fecha de nacimiento</label>
+<input input-date
+    type="text"
+    name="created"
+    id="inputCreated"
+    ng-model="currentTime"
+    container=""
+    format="dd/mm/yyyy"
+    months-full="{{ month }}"
+    months-short="{{ monthShort }}"
+    weekdays-full="{{ weekdaysFull }}"
+    weekdays-short="{{ weekdaysShort }}"
+    weekdays-letter="{{ weekdaysLetter }}"
+    disable="disable"
+    min="{{ minDate }}"
+    max="{{ maxDate }}"
+    today="today"
+    first-day="1"
+    clear="clear"
+    close="close"
+    select-years="200"
+    on-start="onStart()"
+    on-render="onRender()"
+    on-open="onOpen()"
+    on-close="onClose()"
+    on-set="onSet()"
+    on-stop="onStop()" />
         </div>
-        <div class="input-field col s12 m6">
+        <div class="input-field col s12 m5">
           <input id="password" type="text" class="validate" ng-model="trabajo">
           <label class="active" for="password">Lugar de trabajo</label>
         </div>
+        <div class="col s12 m2">
+             	<select class="browser-default">
+              	 <option value="" disabled selected>Tipo de cliente</option>
+              	 <option value="1" selected>Natural</option>
+               	 <option value="2">Juridico</option>
+                </select>
+            </div>
       </div>
     </form>
 
     </div>
     <div class="col s12" style="margin-top: 25px;">
+    	<div class="row">
+    	<div class="col s12 m2">
+              <select class="browser-default">
+               <option value="" disabled selected>Tipo de vivienda</option>
+               <option value="1" selected>propia</option>
+               <option value="2">alquilada</option>
+               <option value="3">hipotecada</option>
+               <option value="4">familiar</option>
+               <option value="5">otros</option>
+             </select>
+            	</div>
+
+
+        <div class="input-field col s12 m5 ">
+          <input placeholder="Ingresos" id="ddomicilio" type="text" class="validate" ng-model=>
+          <label class="active" for="ddomicilio">Dirección de  domicilio</label>
+        </div>
+        <div class="input-field col s12 m5">
+          <input placeholder="Ingresos" id="dtrabajo" type="text" class="validate" ng-model=>
+          <label class="active" for="dtrabajo">Dirección del trabajo</label>
+        </div>
+      </div>
       <div class="row">
-        <div class="col s12 m6">
-          <div class="row">
-            <div class="col s12 m3">
+        
+          
+            <div class="col s12 m2">
               <select class="browser-default">
                <option value="" disabled selected>Estado civil</option>
                <option value="1" selected>Soltero/a</option>
@@ -57,41 +111,71 @@
                <option value="4">Divorciado/a</option>
              </select>
             </div>
-            <div class="input-field col s12 m9">
+            <div class="input-field col s12 m5">
               <input placeholder="Placeholder" id="profesion" type="text" class="validate" ng-model="cargo">
               <label class="active" for="profesion">Cargo</label>
             </div>
-          </div>
-        </div>
-        <div class="col s12 m6">
-          <div class="row">
-            <div class="input-field col s12">
+            	
+         		<div class="input-field col s12 m5">
               <input placeholder="Placeholder" id="document" type="text" class="validate" ng-model="telefono">
               <label class="active" for="document">Teléfono</label>
             </div>
           </div>
-        </div>
-      </div>
+        
+        
+        
+         
       <div class="row">
-        <div class="input-field col s12 m6">
-          <input placeholder="Placeholder" id="tel" type="text" class="validate" ng-model="estudios">
-          <label class="active" for="tel">Grado académico</label>
-        </div>
-        <div class="input-field col s12 m6">
-          <input placeholder="Placeholder" id="direccion" type="text" class="validate" ng-model="nacionalidad">
-          <label class="active" for="direccion">Nacionalidad</label>
-        </div>
-      </div>
-          <div class="row">
-            <div class="input-field col s12 ">
-              <input placeholder="Placeholder" id="lugarprofesion" type="text" class="validate" ng-model="calificacion">
-              <label class="active" for="lugarprofesion">Calificación</label>
-            </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12 m6">
-          <input placeholder="Ingresos" id="ireferencias" type="text" class="validate" ng-model="conyugue">
+      		<div class="col s12 m3">
+              <select class="browser-default">
+               <option value="" disabled selected>Nacionalidad</option>
+               <option value="1" selected>El Salvador</option>
+               <option value="2">Guatemala</option>
+               <option value="3">Costa Rica</option>
+               <option value="4">Nicaragua</option>
+               <option value="5">Panama</option>
+             </select>
+            	</div>
+        <div class="col s12 m3">
+              <select class="browser-default">
+               <option value="" disabled selected>nivel de estudio</option>
+               <option value="1" selected>Graduado</option>
+               <option value="2">Egresado</option>
+               <option value="3">Estudiando</option>
+               <option value="4">bachiller</option>
+               <option value="5">Ninguno</option>
+               
+             </select>
+            	</div>
+            	<div class="input-field col s12 m6">
+          <input placeholder="Ingresos" id="referencias" type="text" class="validate" ng-model="conyugue">
           <label class="active" for="referencias">Cónyugue</label>
+        </div>
+       		
+            
+     		 </div>
+          
+           
+            
+      <div class="row">
+        
+        <div class="input-field col s12 m6">
+          <input placeholder="Ingresos" id="telconyugue" type="text" class="validate" ng-model="">
+          <label class="active" for="telconyugue">teléfono del cónyugue</label>
+        </div>
+        <div class="input-field col s12 m6">
+          <input placeholder="Ingresos" id="trabaconyugue" type="text" class="validate" ng-model="">
+          <label class="active" for="trabaconyugue">trabajo del cónyugue </label>
+        </div>
+      </div>
+       <div class="row">
+        <div class="input-field col s12 m6 ">
+          <input placeholder="Ingresos" id="dcdomicilio" type="text" class="validate" ng-model=>
+          <label class="active" for="dcdomicilio">Dirección de  domicilio (cónyugue)</label>
+        </div>
+        <div class="input-field col s12 m6">
+          <input placeholder="Ingresos" id="dctrabajo" type="text" class="validate" ng-model=>
+          <label class="active" for="dctrabajo">Dirección del trabajo (cónyugue)</label>
         </div>
       </div>
       <a class="waves-effect waves-light btn"><i class="material-icons left">done</i>Guardar</a>
