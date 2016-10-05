@@ -11,6 +11,8 @@
     </ul>
     <ul class="right hide-on-med-and-down" ng-if="!session">
       <li> <a href='#demoModal' modal>Inciar Sesión</a></li>
+       <li> <a href='#demoModal2' modal>Registro</a></li> 
+      
     </ul>
     <ul class="side-nav" id="mobile-demo" ng-if="session">
       <li><a href="#/nueva-solicitud/0">Nueva solicitud</a></li>
@@ -20,8 +22,10 @@
       <li><a href="#" ng-click="close()">Cerrar Sesión</a></li>
     </ul>
     <ul class="side-nav" id="mobile-demo" ng-if="!session">
-      <li> <a href='#demoModal' modal>Inciar Sesión</a></li>
-    </ul>
+     <li> <a href='#demoModal' modal>Inciar Sesión</a></li> 
+       <li> <a href='#demoModal2' modal>Registro</a></li> 
+      </ul>
+      
   </div>
 </nav>
 <div id="demoModal" class="modal">
@@ -42,3 +46,178 @@
         </form>
     </div>
 </div>
+<div id="demoModal2" class="modal">
+    <div class="modal-content">
+        <h4>Registro</h4>
+          <div class="row">
+          <div class="col s12 m6">
+        <form ng-submit="login(user,pass)">
+          <div class="input-field">
+            <input type="text" ng-model="user">
+            <label>Usuario</label>
+          </div>
+          </div>
+          <div class="col s12 m6">
+          <div class="input-field">
+            <input type="password" ng-model="pass">
+            <label>Contraseña</label>
+          </div>
+          </div>
+          </form>
+          </div>
+  <div class="row">
+    <div class="col s12 m3">
+      <figure>
+        <img ng-src="{{foto}}" alt="Foto de perfil" width="300px" height="300px">
+      </figure>
+    </div>
+    <div class="col s12 m9">
+      <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12 m6">
+          <input placeholder="ingrese su nombre" id="first_name" type="text" class="validate" ng-model="nombres">
+          <label class="active" for="first_name">Nombres</label>
+        </div>
+        <div class="input-field col s12 m6">
+          <input placeholder="ingrese su apellido"id="last_name" type="text" class="validate" ng-model="apellidos">
+          <label class="active" for="last_name">Apellidos</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12 ">
+          <input placeholder="su correo electronico" id="email" type="email" class="validate" ng-model="email">
+          <label class="active" for="email">Email</label>
+        </div>
+        <div class="row">
+          <div class="input-field col s12  radios">
+          <input name="group1" type="radio" id="test1" ng-model="sexo" value="1"/>
+          <label for="test1">Masculino</label>
+          <input name="group1" type="radio" id="test2" ng-model="sexo" value="0"/>
+          <label for="test2">Femenino</label>
+        </div>
+
+        </div>
+        
+      </div>
+      <div class="row">
+        <div class=" col s12 m6">
+          <label for="inputCreated">Fecha de nacimiento</label>
+<input input-date
+    type="text"
+    name="created"
+    id="inputCreated"
+    ng-model="currentTime"
+    container=""
+    format="dd/mm/yyyy"
+    months-full="{{ month }}"
+    months-short="{{ monthShort }}"
+    weekdays-full="{{ weekdaysFull }}"
+    weekdays-short="{{ weekdaysShort }}"
+    weekdays-letter="{{ weekdaysLetter }}"
+    disable="disable"
+    min="{{ minDate }}"
+    max="{{ maxDate }}"
+    today="today"
+    first-day="1"
+    clear="clear"
+    close="close"
+    select-years="200"
+    on-start="onStart()"
+    on-render="onRender()"
+    on-open="onOpen()"
+    on-close="onClose()"
+    on-set="onSet()"
+    on-stop="onStop()" />
+        </div>
+        <div class="input-field col s12 m6">
+          <input placeholder="llenar" id="password" type="text" class="validate" ng-model="trabajo">
+          <label class="active" for="password">Lugar de trabajo</label>
+        </div>
+        
+      </div>
+    </form>
+
+    </div>
+    <div class="col s12" style="margin-top: 25px;">
+      <div class="row">
+      <div class="col s12 m6">
+              <select class="browser-default">
+               <option value="" disabled selected>Tipo de vivienda</option>
+               <option value="1" selected>propia</option>
+               <option value="2">alquilada</option>
+               <option value="3">hipotecada</option>
+               <option value="4">familiar</option>
+               <option value="5">otros</option>
+             </select>
+              </div>
+
+
+        <div class="input-field col s12 m6 ">
+          <input placeholder="llenar" id="ddomicilio" type="text" class="validate" ng-model=>
+          <label class="active" for="ddomicilio">Dirección de  domicilio</label>
+        </div>
+       
+      </div>
+      <div class="row">
+        
+          
+            <div class="col s12 m4">
+              <select class="browser-default">
+               <option value="" disabled selected>Estado civil</option>
+               <option value="1" selected>Soltero/a</option>
+               <option value="2">Casado/a</option>
+               <option value="3">Viudo/a</option>
+               <option value="4">Divorciado/a</option>
+             </select>
+            </div>
+            <div class="input-field col s12 m4">
+              <input placeholder="Placeholder" id="profesion" type="text" class="validate" ng-model="cargo">
+              <label class="active" for="profesion">Cargo</label>
+            </div>
+              
+            <div class="input-field col s12 m4">
+              <input placeholder="Placeholder" id="document" type="text" class="validate" ng-model="telefono">
+              <label class="active" for="document">Teléfono</label>
+            </div>
+          </div>
+        
+        
+        
+         
+      <div class="row">
+          <div class="col s12 m6">
+              <select class="browser-default">
+               <option value="" disabled selected>Nacionalidad</option>
+               <option value="1" selected>El Salvador</option>
+               <option value="2">Guatemala</option>
+               <option value="3">Costa Rica</option>
+               <option value="4">Nicaragua</option>
+               <option value="5">Panama</option>
+             </select>
+              </div>
+        <div class="col s12 m6">
+              <select class="browser-default">
+               <option value="" disabled selected>nivel de estudio</option>
+               <option value="1" selected>Graduado</option>
+               <option value="2">Egresado</option>
+               <option value="3">Estudiando</option>
+               <option value="4">bachiller</option>
+               <option value="5">Ninguno</option>
+                </select>
+              </div>
+             </div>
+         </div>
+    </div>
+
+          <div class="modal-footer">
+              <input type="submit" class=" modal-action modal-close waves-effect waves-green btn-flat" value="Iniciar">
+          </div>
+        </form>
+        </div>
+  </div>
+        
+        
+
+
+    
+
