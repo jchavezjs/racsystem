@@ -21,7 +21,7 @@
 
   $idCot = $cot[0];
 
-  $query2 = $mysqli->query("INSERT INTO solicitud(id_tienda,fecha_solicitud,hora_solicitud,id_employee,id_cliente,id_cotizacion,id_estol)
+  $query2 = $mysqli->query("INSERT INTO solicitud(id_tienda,fecha_solicitud,hora_solicitud,id_employee,id_cliente,id_cotizacion,id_estsol)
                         VALUES($tienda,'$dia','$hora',1,$cliente,$idCot,1)");
 
 //   if($query){
