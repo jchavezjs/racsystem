@@ -17,7 +17,7 @@ angular.module('rac',['rac.controllers','ngRoute','ui.materialize'])
               controller: "SolicitudesController",
               templateUrl:"templates/solicitudes.html"
             })
-            .when("/nueva-solicitud",{
+            .when("/nueva-solicitud/:id",{
               controller: "NuevaController",
               templateUrl:"templates/nueva-solicitud.html"
             })

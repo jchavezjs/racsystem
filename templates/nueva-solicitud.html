@@ -4,66 +4,64 @@
   <div class="container">
     <div class="solicitud">
       <div class="row">
-        <div class="col s12 m3">
+        <div class="col s12 m5 l4">
           <figure>
-            <img src="img/camara.png" alt="Foto" width="200px" height="200px"/>
+            <img ng-src="{{product.foto}}" alt="Foto" width="150px" height="150px"/>
           </figure>
         </div>
-        <div class="col s12 m9">
+        <div class="col s12 m7 l8">
           <div class="row">
             <div class="col s12">
-              <select class="browser-default">
+              <select class="browser-default" ng-model="product" ng-options="producto as (producto.nombre + ' ' + producto.marca + ' ' + producto.modelo) for producto in productos">
                <option value="" disabled selected>Producto</option>
-               <option value="1" selected>Cámara Nikon 1080p</option>
-               <option value="2">Televisor LCD</option>
-               <option value="3">Plancha modelo 3x</option>
-               <option value="4">Audífonos SONY</option>
              </select>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12 m6">
-              <input placeholder="Cantidad" id="cantidad" type="number" class="validate" value="1">
+              <input placeholder="Cantidad" id="cantidad" type="number" class="validate" value="0" ng-model="cantidad">
               <label class="active" for="cantidad">Cantidad</label>
             </div>
             <div class="input-field col s12 m6">
-              <input placeholder="Cantidad" id="financiamiento" type="number" class="validate" value="50" disabled>
+              <input placeholder="Cantidad" id="financiamiento" type="text" class="validate" value="{{product.precio | currency}}" disabled>
               <label class="active" for="financiamiento">Costo</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12 m6">
-              <input placeholder="Cantidad" id="prima" type="number" class="validate" value="40">
+              <input placeholder="Cantidad" id="prima" type="number" class="validate" value="40" ng-model="prima">
               <label class="active" for="prima">Prima</label>
             </div>
             <div class="input-field col s12 m6">
-              <input placeholder="Cantidad" id="plazos" type="number" class="validate" value="24">
-              <label class="active" for="plazos">Plazos(meses)</label>
+              <select class="browser-default" ng-model="meses" ng-options="plazo as plazo.meses for plazo in plazos">
+               <option value="" disabled selected>Meses plazo</option>
+             </select>
             </div>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s12 m6">
-          <input placeholder="Cantidad" id="garante" type="text" class="validate" value="Jelmy Josúe Hernandez Melgar">
-          <label class="active" for="garante">Garante</label>
+        <div class="col s12 m6">
+          <select class="browser-default" ng-model="store" ng-options="tienda.id as tienda.nombre for tienda in tiendas">
+            <option value="" disabled selected>Tienda</option>
+          </select>
         </div>
         <div class="col s6 m3">
-          <p>Total crédito: $40.00</p>
-          <p>Total: $100.00</p>
+          <p>Cuota mensual: {{((product.precio - prima)*(1 + (product.interes / 100)) / meses.meses) * cantidad | currency}}</p>
+          <p>Total: {{((product.precio - prima)*(1 + (product.interes / 100))) * cantidad | currency}}</p>
         </div>
         <div class="col s6 m3">
-          <p>Descuento: $0.00</p>
-          <p>Neto a financiar: $50.00</p>
+          <p>Interés: {{product.interes}}%</p>
+          <p>Neto a financiar: {{product.precio - prima | currency}}</p>
         </div>
       </div>
       <div class="row">
         <div class="col s12 m6">
-          <input type="checkbox" class="filled-in" id="filled-in-box" />
+          <input type="checkbox" class="filled-in" id="filled-in-box" ng-model="accept"/>
           <label for="filled-in-box">Acepto <a href="#">términos y condiciones</a> de la empresa</label>
         </div>
         <div class="col s12 m6">
-          <a class="waves-effect waves-light btn"><i class="material-icons left">done</i>Confirmar</a>
+          <a class="waves-effect waves-light btn" ng-click="confirmarSolicitud(product.id, cantidad, product.precio - prima, 0, prima, meses.id, store, accept)"><i class="material-icons left">done</i>Confirmar</a>
         </div>
       </div>
     </div>

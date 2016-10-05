@@ -50,8 +50,35 @@ angular.module('rac.controllers',[])
       $scope.foto = response.foto;
     });
   })
-  .controller('NuevaController',function($scope){
-
+  .controller('NuevaController',function($scope, $routeParams, $http, $location){
+    var id = $routeParams.id;
+    $scope.product = null;
+    $http.get('php/solicitud.php').success(function(response){
+      if(id != 0){
+        for(var x in response.productos){
+          if(response.productos[x].id == id){
+            $scope.product = response.productos[x];
+          }
+        }
+      }
+      $scope.productos = response.productos;
+      $scope.plazos = response.plazos;
+      $scope.tiendas = response.tiendas;
+    });
+    $scope.confirmarSolicitud = function(producto, cantidad, financiamiento, descuento, prima, plazo, tienda, aceptar){
+      if(aceptar){
+        if(!isNaN(cantidad) && cantidad != undefined && !isNaN(descuento) && descuento != undefined && !isNaN(prima) && prima != undefined && plazo != undefined && tienda != undefined){
+          $http.post('php/nuevaSolicitud.php',{'producto': producto, 'cantidad': cantidad, 'financiamiento': financiamiento, 'descuento': descuento, 'prima': prima, 'plazo': plazo, 'tienda': tienda}).success(function(response){
+            alert("Solicitud recibida éxitosamente :)");
+            $location.path('/solicitudes');
+          });
+        }else{
+          alert("Complete correctamente todos los campos");
+        }
+      }else{
+        alert("Debe aceptar los terminos y condiciones para solicitar un producto");
+      }
+    }
   })
   .controller('SolicitudesController',function($scope){
     $scope.solicitudes = [
