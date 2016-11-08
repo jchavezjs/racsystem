@@ -2,12 +2,12 @@
 <section class="profile">
   <h4>Perfil de usuario</h4>
   <div class="row">
-    <div class="col s12 m3">
+    <div class="col s12 l3">
       <figure>
         <img ng-src="{{foto}}" alt="Foto de perfil" width="300px" height="300px">
       </figure>
     </div>
-    <div class="col s12 m9">
+    <div class="col s12 l9">
       <form class="col s12">
       <div class="row">
         <div class="input-field col s12 m6">
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="row">
-        <div class=" col s12 m5">
+        <div class=" col s12 m6">
           <label for="inputCreated">Fecha de nacimiento</label>
 <input input-date
     type="text"
@@ -61,17 +61,17 @@
     on-set="onSet()"
     on-stop="onStop()" />
         </div>
-        <div class="input-field col s12 m5">
+        <div class="input-field col s12 m6">
           <input id="password" type="text" class="validate" ng-model="trabajo">
           <label class="active" for="password">Lugar de trabajo</label>
         </div>
-        <div class="col s12 m2">
+        <!--<div class="col s12 m2">
              	<select class="browser-default">
               	 <option value="" disabled selected>Tipo de cliente</option>
               	 <option value="1" selected>Natural</option>
                	 <option value="2">Juridico</option>
                 </select>
-            </div>
+            </div>-->
       </div>
     </form>
 
@@ -79,39 +79,11 @@
     <div class="col s12" style="margin-top: 25px;">
     	<div class="row">
     	<div class="col s12 m2">
-              <select class="browser-default">
+              <select class="browser-default" ng-model="viv" ng-options="vivi.id as vivi.nombre for vivi in viviendas">
                <option value="" disabled selected>Tipo de vivienda</option>
-               <option value="1" selected>propia</option>
-               <option value="2">alquilada</option>
-               <option value="3">hipotecada</option>
-               <option value="4">familiar</option>
-               <option value="5">otros</option>
              </select>
             	</div>
-
-
-        <div class="input-field col s12 m5 ">
-          <input placeholder="Ingresos" id="ddomicilio" type="text" class="validate" ng-model=>
-          <label class="active" for="ddomicilio">Dirección de  domicilio</label>
-        </div>
-        <div class="input-field col s12 m5">
-          <input placeholder="Ingresos" id="dtrabajo" type="text" class="validate" ng-model=>
-          <label class="active" for="dtrabajo">Dirección del trabajo</label>
-        </div>
-      </div>
-      <div class="row">
-        
-          
-            <div class="col s12 m2">
-              <select class="browser-default">
-               <option value="" disabled selected>Estado civil</option>
-               <option value="1" selected>Soltero/a</option>
-               <option value="2">Casado/a</option>
-               <option value="3">Viudo/a</option>
-               <option value="4">Divorciado/a</option>
-             </select>
-            </div>
-            <div class="input-field col s12 m5">
+              <div class="input-field col s12 m5">
               <input placeholder="Placeholder" id="profesion" type="text" class="validate" ng-model="cargo">
               <label class="active" for="profesion">Cargo</label>
             </div>
@@ -120,44 +92,60 @@
               <input placeholder="Placeholder" id="document" type="text" class="validate" ng-model="telefono">
               <label class="active" for="document">Teléfono</label>
             </div>
+
+        <!--<div class="input-field col s12 m5 ">
+          <input placeholder="Ingresos" id="ddomicilio" type="text" class="validate" ng-model=>
+          <label class="active" for="ddomicilio">Dirección de  domicilio</label>
+        </div>
+        <div class="input-field col s12 m5">
+          <input placeholder="Ingresos" id="dtrabajo" type="text" class="validate" ng-model=>
+          <label class="active" for="dtrabajo">Dirección del trabajo</label>
+        </div>-->
+      </div>
+      <div class="row">
+        
+          
+            <div class="col s12 m2">
+              <select class="browser-default" ng-model="esta" ng-options="est.id as est.nombre for est in estados">
+               <option value="" disabled selected>Estado civil</option>
+             </select>
+            </div>
+
+            <div class="col s12 m2">
+              <select class="browser-default" ng-model="nacio" ng-options="nac.id as nac.nombre for nac in nacionalidades">
+               <option value="" disabled selected>Nacionalidad</option>
+             </select>
+            	</div>
+        <div class="col s12 m2">
+              <select class="browser-default"  ng-model="study" ng-options="estudy.id as estudy.nombre for estudy in studys">
+               <option value="" disabled selected>nivel de estudio</option>
+               
+             </select>
+            	</div>
+
+              <div class="input-field col s12 m6">
+              <input placeholder="Salario" id="salario" type="text" class="validate" ng-model="ingreso">
+              <label class="active" for="salario">Salario</label>
+            </div>
+            
           </div>
         
         
         
          
       <div class="row">
-      		<div class="col s12 m3">
-              <select class="browser-default">
-               <option value="" disabled selected>Nacionalidad</option>
-               <option value="1" selected>El Salvador</option>
-               <option value="2">Guatemala</option>
-               <option value="3">Costa Rica</option>
-               <option value="4">Nicaragua</option>
-               <option value="5">Panama</option>
-             </select>
-            	</div>
-        <div class="col s12 m3">
-              <select class="browser-default">
-               <option value="" disabled selected>nivel de estudio</option>
-               <option value="1" selected>Graduado</option>
-               <option value="2">Egresado</option>
-               <option value="3">Estudiando</option>
-               <option value="4">bachiller</option>
-               <option value="5">Ninguno</option>
-               
-             </select>
-            	</div>
-            	<div class="input-field col s12 m6">
-          <input placeholder="Ingresos" id="referencias" type="text" class="validate" ng-model="conyugue">
-          <label class="active" for="referencias">Cónyugue</label>
-        </div>
+      		
+            	<!--<div class="input-field col s12 m6">
+                <input placeholder="Ingresos" id="referencias" type="text" class="validate" ng-model="conyugue">
+                <label class="active" for="referencias">Cónyugue</label>
+              </div>-->
        		
             
      		 </div>
           
            
             
-      <div class="row">
+      <!--<div class="row">
         
         <div class="input-field col s12 m6">
           <input placeholder="Ingresos" id="telconyugue" type="text" class="validate" ng-model="">
@@ -177,10 +165,15 @@
           <input placeholder="Ingresos" id="dctrabajo" type="text" class="validate" ng-model=>
           <label class="active" for="dctrabajo">Dirección del trabajo (cónyugue)</label>
         </div>
-      </div>
-      <a class="waves-effect waves-light btn"><i class="material-icons left">done</i>Guardar</a>
+      </div>-->
+      <a class="waves-effect waves-light btn" ng-click="editar(email,sexo,currentTime,trabajo,viv,cargo,telefono,esta,nacio,study,ingreso,foto)"><i class="material-icons left">done</i>Guardar</a>
+      <input fileread="imagenNueva" type="file" ngf-select="uploadFiles($file, $invalidFiles)"
+                      accept="image/*" ngf-max-height="1000" ngf-max-size="1MB" class="file">
+                      <span ng-show="f.progress >= 0">
+                          <div style="width:{{f.progress}}%;"
+                               ng-bind="f.progress + '%'"></div>
+                      </span>
     </div>
   </div>
 
 </section>
-<script src="js/slider.js"></script>

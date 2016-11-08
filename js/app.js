@@ -1,4 +1,4 @@
-angular.module('rac',['rac.controllers','ngRoute','ui.materialize'])
+angular.module('rac',['rac.controllers','ngRoute','ui.materialize','ngFileUpload'])
   .config(function($routeProvider,$locationProvider){
     $routeProvider
             .when("/", {
@@ -34,3 +34,22 @@ angular.module('rac',['rac.controllers','ngRoute','ui.materialize'])
     templateUrl: "templates/header.html",
     controller: "HeaderController"
   })
+
+.directive("fileread", [function () {
+    return {
+        scope: {
+            fileread: "="
+        },
+        link: function (scope, element, attributes) {
+            element.bind("change", function (changeEvent) {
+                var reader = new FileReader();
+                reader.onload = function (loadEvent) {
+                    scope.$apply(function () {
+                        scope.fileread = loadEvent.target.result;
+                    });
+                }
+                reader.readAsDataURL(changeEvent.target.files[0]);
+            });
+        }
+    }
+}])

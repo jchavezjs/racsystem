@@ -11,13 +11,12 @@
         </div>
         <div class="col s12 m9">
           <div class="progress">
-              <div class="determinate" style="width: {{solicitud.porcentaje}}"></div>
+              <div class="determinate" style="width: 5%"></div>
           </div>
-          <h6>Solicitud de crédito de {{solicitud.nombre}}</h6>
-          <p>Fecha de inicio: {{solicitud.iniciado | date:"dd/MM/yyyy"}}</p>
-          <p>Estado actual: {{solicitud.estado}}</p>
-          <p>Estado actual desde: {{solicitud.fechaestado | date:"dd/MM/yyyy"}}</p>
-          <p>Comentarios: {{solicitud.comentarios}}</p>
+          <h6>Solicitud de crédito de {{solicitud.nombre}} {{solicitud.marca}} {{solicitud.modelo}}</h6>
+          <p>Fecha de inicio: {{solicitud.fecha | date:"dd/MM/yyyy"}}</p>
+          <p>Hora de inicio: {{solicitud.hora}}</p>
+          <p>Estado: {{solicitud.estado}}</p>
         </div>
       </div>
       <a class="waves-effect waves-light btn help-btn">Obtener ayuda</a>

@@ -26,39 +26,77 @@ angular.module('rac.controllers',[])
       });
     };
   })
-  .controller('ProfileController',function($scope, $http){
+  .controller('ProfileController',function($scope, $http, Upload){
     $http.get('php/profile.php').success(function(response){
-      $scope.nombres = response.nombres;
-      $scope.apellidos = response.apellidos;
-      $scope.fecha = response.fecha;
-      $scope.ingreso = response.ingreso;
-      $scope.email = response.email;
-      $scope.trabajo = response.trabajo;
+      $scope.studys = response.estudios;
+      $scope.viviendas = response.viviendas;
+      $scope.nacionalidades = response.nacionalidades;
+      $scope.estados = response.estados;
+      $scope.nombres = response.perfil.nombres;
+      $scope.apellidos = response.perfil.apellidos;
+      $scope.fecha = response.perfil.fecha;
+      $scope.ingreso = response.perfil.ingreso;
+      $scope.email = response.perfil.email;
+      $scope.trabajo = response.perfil.trabajo;
       if(response.sexo == 1){
         $scope.sexo = 1;
       }else{
         $scope.sexo = 0;
       }
-      $scope.civil = response.civil;
-      $scope.cargo = response.cargo;
-      $scope.telefono = response.telefono;
-      $scope.estudios = response.estudios;
-      $scope.nacionalidad = response.nacionalidad;
-      $scope.calificacion = response.calificacion;
-      $scope.conyugue = response.nombre_co + " " + response.apellido_co;
+      $scope.civil = response.perfil.civil;
+      $scope.cargo = response.perfil.cargo;
+      $scope.telefono = response.perfil.telefono;
+      $scope.estudios = response.perfil.estudios;
+      $scope.nacionalidad = response.perfil.nacionalidad;
+      $scope.calificacion = response.perfil.calificacion;
+      $scope.conyugue = response.perfil.nombre_co + " " + response.perfil.apellido_co;
 
-      $scope.foto = response.foto;
+      $scope.foto = response.perfil.foto;
+      var currentTime = new Date($scope.fecha);
+      console.log()
+      $scope.currentTime = currentTime;
+      $scope.month = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+      $scope.monthShort = ['En', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+      $scope.weekdaysFull = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sábado'];
+      $scope.weekdaysLetter = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+      $scope.disable = [false, 1, 7];
+      $scope.today = 'Hoy';
+      $scope.clear = 'Limpiar';
+      $scope.close = 'Cerrar';
     });
-    var currentTime = new Date();
-    $scope.currentTime = currentTime;
-    $scope.month = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-    $scope.monthShort = ['En', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
-    $scope.weekdaysFull = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sábado'];
-    $scope.weekdaysLetter = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
-    $scope.disable = [false, 1, 7];
-    $scope.today = 'Hoy';
-    $scope.clear = 'Limpiar';
-    $scope.close = 'Cerrar';
+
+     $scope.uploadFiles = function(file, errFiles) {
+           $scope.f = file;
+           
+          $scope.foto = 'img/'+file.name;
+           $scope.errFile = errFiles && errFiles[0];
+           if (file) {
+               file.upload = Upload.upload({
+                   url: 'php/editarPerfil.php?tipo=img',
+                   data: {file: file}
+               });
+
+               file.upload.then(function (response) {
+                   $timeout(function () {
+                       file.result = response.data;
+                   });
+               }, function (response) {
+                   if (response.status > 0)
+                       $scope.errorMsg = response.status + ': ' + response.data;
+               }, function (evt) {
+                   file.progress = Math.min(100, parseInt(100.0 *
+                                            evt.loaded / evt.total));
+               });
+           }
+           
+        };
+
+        $scope.editar = function(email, sexo, fecha, trabajo, vivienda, cargo, telefono, estado, nacionalidad, estudio, ingreso, foto){
+          alert("entro");
+          $http.post('php/editarPerfil.php?tipo=1',{'email': email, 'sexo':sexo, 'fecha':fecha, 'trabajo': trabajo, 'vivienda': vivienda,'cargo': cargo, 'telefono': telefono, 'estado': estado, 'nacionalidad': nacionalidad, 'estudio': estudio, 'ingreso': ingreso, 'foto': foto}).success(function(response){
+            alert("exito");
+          });
+        }
   })
   .controller('NuevaController',function($scope, $routeParams, $http, $location){
     var id = $routeParams.id;
@@ -90,7 +128,7 @@ angular.module('rac.controllers',[])
       }
     }
   })
-  .controller('SolicitudesController',function($scope){
+  .controller('SolicitudesController',function($scope, $http){
     $scope.solicitudes = [
       {
         foto: "img/camara.png",
@@ -111,6 +149,9 @@ angular.module('rac.controllers',[])
         porcentaje: "20%"
       },
     ];
+    $http.get('php/solicitudes.php').success(function(response){
+      $scope.solicitudes = response.solicitudes;
+    });
   })
 
   .controller('ProductController',function($scope, $http){
