@@ -17,30 +17,37 @@
     </div>
   </div>
 	
-	<div class="row">
-    <a class="btn-floating btn-large waves-effect waves-light red right"><i class="material-icons">print</i></a>
+	<div class="row" style="position: relative;">
+    <a class="btn-floating btn-large waves-effect waves-light red right" ng-click="openPdf(solicitudes, productoM, financiamiento, primaTotal, tienda)" style="position:absolute; top:0px; right: 10px;"><i class="material-icons">print</i></a>
 
-    <div class="container">
+    <div class="container-fluid">
     <div class="section">
       <div class="row">
-        <div class="col s12 m4">
+        <div class="col s12 m3">
           <div class="icon-block">
-            <h5 class="center">Producto mas Vendido</h5>
-            <h2 class="center brown-text"><i class="material-icons">language</i></h2>
+            <h5 class="center">Producto mas solcitado</h5>
+            <h5 class="center brown-text"><i class="material-icons">language</i> {{productoM}}</h5>
           </div>
         </div>
 
-        <div class="col s12 m4">
+        <div class="col s12 m3">
           <div class="icon-block">
-            <h5 class="center">Mejor Cliente</h5>
-            <h2 class="center brown-text"><i class="material-icons">group</i></h2>   
+            <h5 class="center">Max. financiado</h5>
+            <h5 class="center brown-text"><i class="material-icons">group</i>{{financiamiento | currency}}</h5>   
           </div>
         </div>
 
-        <div class="col s12 m4">
+        <div class="col s12 m3">
           <div class="icon-block">
-            <h5 class="center">Ventas del mes</h5>
-            <h2 class="center brown-text"><i class="material-icons">subtitles</i></h2>
+            <h5 class="center">Primas totales</h5>
+            <h5 class="center brown-text"><i class="material-icons">subtitles</i>{{primaTotal | currency}}</h5>
+          </div>
+        </div>
+
+        <div class="col s12 m3">
+          <div class="icon-block">
+            <h5 class="center">Mejor tienda</h5>
+            <h5 class="center brown-text"><i class="material-icons">room</i>{{tienda}}</h5>
           </div>
         </div>
       </div>
@@ -52,29 +59,31 @@
        <table class="centered striped bordered">	
         <thead>
         <tr>
-        	  <th data-field="idsolicitud">ID solicitud</th>
-        	  <th data-field="idtienda">ID tienda</th>
-              <th data-field="fecha">Fecha</th>
-              <th data-field="hora">Hora</th>
-              <th data-field="IDempleado">ID Empleado</th>
-              <th data-field="IDcliente">ID Cliente</th>
-              <th data-field="IDcotizacion">ID Cotización</th>
-              <th data-field="Estadosolicitud">Estado Solicitud</th>
-              
+        	  <th data-field="Solicitud">ID</th>
+        	  <th data-field="Tienda">Tienda</th>
+              <th data-field="Fecha">Fecha</th>
+              <th data-field="Hora">Hora</th>
+              <th data-field="Empleado">Empleado</th>
+              <th data-field="Cliente">Cliente</th>
+              <th data-field="Cotizacion">Producto</th>
+              <th data-field="Estado">Prima</th>
+              <th data-field="Financiamiento">Financiamiento</th>
+              <th data-field="Estado">Estado</th>
          </tr>
         </thead>
 
         <tbody>
-          <tr>
-            <td>5425</td>
-            <td>34</td>
-            <td>11/25/2016</td>
-            <td>14:15:00</td>
-            <td>356</td>
-            <td>57</td>
-            <td>147</td>
-            <td>1</td>
-            
+          <tr ng-repeat="solicitud in solicitudes">
+            <td>{{solicitud.id}}</td>
+            <td>{{solicitud.tienda}}</td>
+            <td>{{solicitud.fecha | date:'dd/MM/yyyy'}}</td>
+            <td>{{solicitud.hora}}</td>
+            <td>{{solicitud.empleado}}</td>
+            <td>{{solicitud.cliente}}</td>
+            <td>{{solicitud.producto}}</td>
+            <td>{{solicitud.prima | currency}}</td>
+            <td>{{solicitud.financiamiento | currency}}</td>
+            <td>{{solicitud.estado}}</td>
           </tr>
         </tbody>
       </table>

@@ -1,4 +1,4 @@
-angular.module('rac',['rac.controllers','ngRoute','ui.materialize'])
+angular.module('admin',['admin.controllers','ngRoute','ui.materialize'])
   .config(function($routeProvider,$locationProvider){
     $routeProvider
             .when("/", {
@@ -10,12 +10,11 @@ angular.module('rac',['rac.controllers','ngRoute','ui.materialize'])
               templateUrl:"templates/adminproductos.html"
             })
             .when("/adminsol", {
-                controller: "adminsol",
                 controller: "AdminsolController",
                 templateUrl: "templates/adminsol.html"
             })
             .when("/solicitud",{
-              controller: "solicitudController",
+              controller: "SolicitudController",
               templateUrl:"templates/solicitud.html"
             })
             
