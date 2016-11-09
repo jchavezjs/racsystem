@@ -1,0 +1,87 @@
+<section class="adminproductos" id="adminproductos">
+<div class="row">
+		<div ><h3 class="center">Agregar productos</h3></div>
+</div>      	
+
+<div class="container">
+<div class="row">
+        <div class="input-field col s12 l6">
+          <input id="nombreproducto">
+          <label for="nombreproducto">Nombre producto</label>
+        </div>
+      
+		<div class=" col s12 l6">
+			<label>ID modelo</label>
+  			<select class="browser-default">
+    		<option value="1"></option>
+  			</select>
+		</div>
+</div>
+<div class="row">
+        <div class="input-field col s12 l6">
+          <input id="precio" type="number">
+          <label for="precio">Precio</label>
+        </div>
+     	<div class="col s12 l6">
+     		<label>ID marca</label> 
+  			<select class="browser-default">
+    		<option value="1"></option>
+  			</select>
+  		</div>
+</div>
+<div class="row">
+ 		<div class="col s12 l6">
+ 			<label>ID Tipo </label>
+  			<select class="browser-default">
+    		<option value="1"></option>
+  			</select>
+  		</div>
+		
+        <div class="input-field col s12 l6">
+          <input id="stock" type="number">
+          <label for="stock">¿Cuantos productos desea agregar?</label>
+        </div>      
+</div>
+      
+
+<div class="row">
+<div class="col s12 right-align"><button class="btn waves-effect waves-light" type="submit" name="Buscar">Agregar<i class="material-icons right">check</i></button>
+<button class="btn waves-effect waves-light" type="submit" name="Buscar">Editar<i class="material-icons right">check</i></button>
+<button class="btn waves-effect waves-light" type="submit" name="Buscar">Eliminar<i class="material-icons right">check</i></button></div>
+</div>
+<div class="row"></div>
+
+
+<div class="center">    
+       <table class="centered striped bordered">	
+        <thead>
+        <tr>
+        	  <th data-field="imagen">Imagen</th>
+        	  <th data-field="id">Nombre</th>
+              <th data-field="IDmodelo">Modelo</th>
+              <th data-field="IDtipo">Tipo</th>
+              <th data-field="IDmarca">Marca</th>
+              <th data-field="IDprecio">Precio</th>
+              <th data-field="IDprecio"></th>
+              <th data-field="IDprecio"></th>
+         </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><button class="btn waves-effect waves-light" type="submit">Editar<i class="material-icons right">mode_edit</i></button></td>
+            <td><button class="btn waves-effect waves-light" type="submit">eliminar<i class="material-icons right">delete</i></button></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+
+
+	
+</section>
