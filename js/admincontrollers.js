@@ -20,7 +20,7 @@ angular.module('admin.controllers',[])
                 text: 'Fecha: ' + f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear(), margin: [ 0, 0, 0, 40 ], fontSize: 10
             },
             // {
-            //     image: './h.jpg',
+            //     image: getBase64FromImageUrl("http://www.grupounicomer.com/wp-content/themes/unicomer/images/top_logo.png"),
             //     width: 150,
             //     height: 150
             // },

@@ -50,7 +50,10 @@ angular.module('rac.controllers',[])
       $scope.nacionalidad = response.perfil.nacionalidad;
       $scope.calificacion = response.perfil.calificacion;
       $scope.conyugue = response.perfil.nombre_co + " " + response.perfil.apellido_co;
-
+      $scope.viv = response.perfil.vivienda;
+      $scope.esta = response.perfil.civil;
+      $scope.nacio = response.perfil.nacionalidad;
+      $scope.study = response.perfil.estudios;
       $scope.foto = response.perfil.foto;
       var currentTime = new Date($scope.fecha);
       console.log()
@@ -92,9 +95,13 @@ angular.module('rac.controllers',[])
         };
 
         $scope.editar = function(email, sexo, fecha, trabajo, vivienda, cargo, telefono, estado, nacionalidad, estudio, ingreso, foto){
-          alert("entro");
-          $http.post('php/editarPerfil.php?tipo=1',{'email': email, 'sexo':sexo, 'fecha':fecha, 'trabajo': trabajo, 'vivienda': vivienda,'cargo': cargo, 'telefono': telefono, 'estado': estado, 'nacionalidad': nacionalidad, 'estudio': estudio, 'ingreso': ingreso, 'foto': foto}).success(function(response){
-            alert("exito");
+          var date = new Date(fecha);
+          var trueDate = date.getFullYear() + "-" + ("0" + (date.getMonth() + 1)).slice(-2) + "-" + ("0" + (date.getDay() + 1)).slice(-2);
+          if(!sexo){
+            sexo = 2;
+          }
+          $http.post('php/editarPerfil.php?tipo=1',{'email': email, 'sexo':sexo, 'fecha':trueDate, 'trabajo': trabajo, 'vivienda': vivienda,'cargo': cargo, 'telefono': telefono, 'estado': estado, 'nacionalidad': nacionalidad, 'estudio': estudio, 'ingreso': ingreso, 'foto': foto}).success(function(response){
+            alert("¡Éxito al guardar!");
           });
         }
   })

@@ -11,8 +11,7 @@ if($tipo == "img"){
 }else{
   $email = $data_input -> email;
   $sexo = $data_input -> sexo;
-  $fecha = new DateTime($data_input -> fecha);
-  $nfecha = $fecha->format('Y-m-d');
+  $fecha = $data_input -> fecha;
   $trabajo = $data_input -> trabajo;
   $vivienda = $data_input -> vivienda;
   $cargo = $data_input -> cargo;
@@ -22,6 +21,6 @@ if($tipo == "img"){
   $estudio = $data_input -> estudio;
   $ingreso = $data_input -> ingreso;
   $foto = $data_input -> foto;
-  $mysqli->query("pdate cliente set email=".mysqli_real_escape_string($enlace,'$email').", fecha_nacimiento='$nfecha', id_sexo=$sexo, lugar_trabajo='$trabajo', id_tipo_vivienda=$vivienda, foto='$foto', id_estado_civil=$estado, money_income=$ingreso, id_nacionalidad=$nacionalidad, id_nivel_estudios=$estudio where id_cliente=$id");
+  $mysqli->query("update cliente set email='$email', fecha_nacimiento='$fecha', id_sexo=$sexo, lugar_trabajo='$trabajo', id_tipo_vivienda=$vivienda, foto='$foto', id_estado_civil=$estado, money_income=$ingreso, id_nacionalidad=$nacionalidad, id_nivel_estudios=$estudio where id_cliente=$id");
 }
 ?>
