@@ -1,26 +1,76 @@
-<section class="adminSolicitudes" id="adminSolicitudes">
-	
-	<div class="row">
-		<div ><h3 class="center">Administrar solicitudes de Credito</h3></div>
-		
-		<div class="center">    
-       <table class="centered striped bordered">	
+<section class="admminSolicitudes" id="adminSolicitudes">
+<div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">Administrar Solicitudes</h1>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="sol2.jpg" alt="Unsplashed background img 3"></div>
+  </div>
+  <div class="container">
+    <div class="section">
+    <div class="row">
+    </div>
+    </div>
+  </div>
+  
+  
+    <div class="container-fluid">
+    <div class="section">
+      <div class="row">
+        <div class="col s12 m3">
+          <div class="icon-block">
+            <h5 class="center">Producto mas solcitado</h5>
+            <h5 class="center brown-text"><i class="material-icons">language</i> </h5>
+          </div>
+        </div>
+
+        <div class="col s12 m3">
+          <div class="icon-block">
+            <h5 class="center">Max. financiado</h5>
+            <h5 class="center brown-text"><i class="material-icons">group</i></h5>   
+          </div>
+        </div>
+
+        <div class="col s12 m3">
+          <div class="icon-block">
+            <h5 class="center">Primas totales</h5>
+            <h5 class="center brown-text"><i class="material-icons">subtitles</i></h5>
+          </div>
+        </div>
+
+        <div class="col s12 m3">
+          <div class="icon-block">
+            <h5 class="center">Mejor tienda</h5>
+            <h5 class="center brown-text"><i class="material-icons">room</i></h5>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+    
+    <div class="center">    
+       <table class="centered striped bordered">  
         <thead>
         <tr>
-        	  <th data-field="imagen">Imagen</th>
-        	  <th data-field="id">Nombre</th>
-              <th data-field="IDmodelo">Cantidad</th>
-              <th data-field="IDtipo">Prima</th>
-              <th data-field="IDmarca">Plazo</th>
-              <th data-field="IDprecio">Fecha</th>
-              <th data-field="IDprecio">hora</th>
-              <th data-field="IDprecio"></th>
-              <th data-field="IDprecio"></th>
+            <th data-field="Solicitud">ID</th>
+            <th data-field="Tienda">Tienda</th>
+              <th data-field="Fecha">Fecha</th>
+              <th data-field="Hora">Hora</th>
+              <th data-field="Cliente">Cliente</th>
+              <th data-field="Cotizacion">Producto</th>
+              <th data-field="Estado">Prima</th>
+              <th data-field="Financiamiento">Financiamiento</th>
+              <th data-field="Estado">Estado</th>
          </tr>
         </thead>
 
         <tbody>
-          <tr>
+          <tr ng-repeat="solicitud in solicitudes">
             <td></td>
             <td></td>
             <td></td>
@@ -28,12 +78,20 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><button class="btn waves-effect waves-light" type="submit">Editar<i class="material-icons right">mode_edit</i></button></td>
-            <td><button class="btn waves-effect waves-light" type="submit">eliminar<i class="material-icons right">delete</i></button></td>
+            <td></td>
+            <td></td>
+            <td><select>
+                  <option value="1">Option 1</option>
+                  </select></td>
           </tr>
         </tbody>
       </table>
 </div>
 
-	
+  
 </section>
+<script type="text/javascript">
+     $(document).ready(function(){
+      $('.parallax').parallax();
+    });
+  </script>
