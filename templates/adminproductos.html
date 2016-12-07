@@ -1,7 +1,22 @@
 <section class="adminproductos" id="adminproductos">
-<div class="row">
-		<div ><h3 class="center">Agregar productos</h3></div>
-</div>      	
+<div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">Agregar productos</h1>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="productos.jpg" alt="Unsplashed background img 3"></div>
+  </div>
+  <div class="container">
+    <div class="section">
+    <div class="row">
+    </div>
+    </div>
+  </div>
+      	
 
 <div class="container">
 <div class="row">
@@ -40,7 +55,19 @@
         <div class="input-field col s12 l6">
           <input id="stock" type="number">
           <label for="stock">¿Cuantos productos desea agregar?</label>
-        </div>      
+        </div>
+        <form action="#">
+    <div class="file-field input-field">
+      <div class="btn">
+        <span>Imagen</span>
+        <input type="file">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+    </div>
+    <div class="center"><IMG SRC="defaultproducto.png"></div>
+  </form>      
 </div>
       
 
@@ -62,6 +89,7 @@
               <th data-field="IDtipo">Tipo</th>
               <th data-field="IDmarca">Marca</th>
               <th data-field="IDprecio">Precio</th>
+              <th data-field="IDprecio">stock</th>
               <th data-field="IDprecio"></th>
               <th data-field="IDprecio"></th>
          </tr>
@@ -69,6 +97,7 @@
 
         <tbody>
           <tr>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -85,3 +114,8 @@
 
 	
 </section>
+<script type="text/javascript">
+     $(document).ready(function(){
+      $('.parallax').parallax();
+    });
+  </script>
